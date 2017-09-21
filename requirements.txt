@@ -1,0 +1,2 @@
+pyopenssl==17.3.0
+sendgrid==5.2.0
