@@ -27,9 +27,11 @@ with open(dir_path + '/domains') as f:
 domains = [x.strip() for x in domains]
 
 expired = []
+timestamp = time.strftime("%c")
+print ("Current time %s" % timestamp )
 
 for domain in domains:
-    print(domain)
+    print("%s - OK" % domain)
     cert=ssl.get_server_certificate((domain, 443))
     x509 = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, cert)
     notAfter = x509.get_notAfter()
